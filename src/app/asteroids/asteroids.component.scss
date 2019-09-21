@@ -1,0 +1,47 @@
+:host {
+  align-self: flex-start;
+  width: 100%;
+  height: 100%;
+}
+
+.asteroid-container {
+  padding: 10px;
+  overflow-y: scroll;
+  height: 100%;
+
+  .asteroid-header {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .asteroids {
+
+    .asteroid-number {
+      color: rgb(250, 151, 151);
+    }
+  }
+
+  .asteroid {
+    margin-bottom: 1rem;
+  }
+
+  .m-l-1 {
+    margin-left: 1rem;
+  }
+
+  .m-b-1 {
+    margin-bottom: 1rem;
+  }
+
+  .hazardous {
+    color: red;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  mat-card-title {
+    font-size: 1.2rem;
+  }
+}

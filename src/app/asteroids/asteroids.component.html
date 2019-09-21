@@ -1,0 +1,33 @@
+<div class="asteroid-container">
+  <mat-card class="asteroid-header">Asteroids</mat-card>
+  <div class="asteroids">
+    <mat-card *ngFor="let asteroid of asteroids; index as i" class="asteroid">
+      <mat-card-title>
+        <span class="asteroid-number">#{{i + 1}}</span> - {{ asteroid.name }}
+      </mat-card-title>
+      <mat-card-content>
+        <div class="m-b-1">
+          <div>Estimated Diameter (kilomiters):</div>
+          <div class="m-l-1"><span>max:</span> {{ asteroid.estimated_diameter.kilometers.estimated_diameter_max }}</div>
+          <div class="m-l-1"><span>min:</span> {{ asteroid.estimated_diameter.kilometers.estimated_diameter_min }}</div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="m-b-1">
+          <div>Close Approach Date:</div>
+          <div class="m-l-1">{{ asteroid.close_approach_data[0].close_approach_date }}</div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="m-b-1">
+          <div>Potentially Hazardous Asteroid:</div>
+          <div
+            class="m-l-1"
+            [ngClass]="{ hazardous: asteroid.is_potentially_hazardous_asteroid }"
+          >
+            {{ asteroid.is_potentially_hazardous_asteroid ? 'Yes' : 'No' }}
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

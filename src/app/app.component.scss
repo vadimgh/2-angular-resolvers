@@ -1,0 +1,103 @@
+:host {
+  height: 100%;
+}
+
+.grid-container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 50px calc(100% - 100px) 50px;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.header-container {
+  grid-column: 1 / 6;
+  grid-row: 1 / 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.sidebar-container {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.main-area-container {
+  grid-column: 2 / 6;
+  grid-row: 2 / 3;
+  overflow: hidden;
+}
+
+.footer-container {
+  grid-column: 1 / 6;
+  grid-row: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    font-size: 1rem;
+  }
+}
+
+.header-container,
+.sidebar-container,
+.main-area-container,
+.footer-container {
+  background-color: #252525;
+  color: white;
+}
+
+.space-header {
+  padding-left: 1rem;
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+  }
+}
+
+mat-grid-list {
+  height: 100vh;
+}
+
+.nasa-docs {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.explore-items {
+  font-size: 1.1rem;
+  padding: 1.5rem;
+}
+
+.choose-to-explore {
+  mat-list-item a {
+    color: white;
+  }
+}
+
+.explore-items-container {
+  width: 100%;
+  height: 100%;
+}
+
+.main-area-container {
+  background: none;
+}
+
+.router-content {
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+  .space-header {
+    font-size: 1.2rem;
+  }
+
+  .nasa-docs {
+    font-size: 1.2rem;
+  }
+}
