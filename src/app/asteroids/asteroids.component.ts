@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Asteroid } from './models/asteroid';
-import { AsteroidsService } from './services/asteroids.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-asteroids',
@@ -10,11 +10,10 @@ import { AsteroidsService } from './services/asteroids.service';
 export class AsteroidsComponent implements OnInit {
   asteroids: Asteroid[];
 
-  constructor(private asteroidsService: AsteroidsService) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.asteroidsService.getAsteroids()
-      .subscribe(a => this.asteroids = a);
+    this.asteroids = this.route.snapshot.data['asteroids'];
   }
 
 }

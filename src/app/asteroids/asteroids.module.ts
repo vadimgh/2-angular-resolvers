@@ -6,11 +6,15 @@ import { MatDividerModule } from '@angular/material/divider';
 
 import { AsteroidsComponent } from './asteroids.component';
 import { AsteroidsService } from './services/asteroids.service';
+import { AsteroidsResolverService } from './services/asteroids-resolver.service';
 
 const routes: Routes = [
   {
     path: '',
-    component: AsteroidsComponent, data: { animation: 'fadeAsteroids' }
+    component: AsteroidsComponent, data: { animation: 'fadeAsteroids' },
+    resolve: {
+      asteroids: AsteroidsResolverService
+    }
   }
 ]
 
@@ -22,6 +26,6 @@ const routes: Routes = [
     MatDividerModule
   ],
   declarations: [AsteroidsComponent],
-  providers: [AsteroidsService]
+  providers: [AsteroidsService, AsteroidsResolverService]
 })
 export class AsteroidsModule { }

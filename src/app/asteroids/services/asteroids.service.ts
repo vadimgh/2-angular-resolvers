@@ -19,7 +19,6 @@ export class AsteroidsService {
     return this.http.get<AsteroidResponse>(`${this.api}/assets/data/asteroids.json`)
       .pipe(
         map(res => {
-          [[1, 2], [2, 3]].flat();
           return Object.keys(res.near_earth_objects)
             .map(key => res.near_earth_objects[key]).flat();
         }),
